@@ -2,7 +2,16 @@
 
 ## To do befor testing :
 
-update env file : use mailtrap credentials to catch emails
+update env file :
+
+-   Add Rapid Api Keys
+
+```bash
+X_RapidAPI_Key="xxxxxxxx"
+X_RapidAPI_Host="xxxxxxx"
+```
+
+-   Add mailtrap credentials to catch emails
 
 ```bash
 MAIL_HOST=sandbox.smtp.mailtrap.io

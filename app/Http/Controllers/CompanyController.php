@@ -115,8 +115,8 @@ class CompanyController extends Controller
         try {
 
             $response = Http::withHeaders([
-                'X-RapidAPI-Key' => 'a9e67e8dffmsh90255b6d94d3291p1b03c0jsn617b8e4e0345',
-                'X-RapidAPI-Host' => 'yh-finance.p.rapidapi.com'
+                'X-RapidAPI-Key' => env('X_RapidAPI_Key'),
+                'X-RapidAPI-Host' => env('X_RapidAPI_Host')
             ])->get('https://yh-finance.p.rapidapi.com/stock/v3/get-historical-data', [
                 'symbol' => $companySymbol,
                 'region' => 'US',
