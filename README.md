@@ -7,8 +7,8 @@ update env file :
 -   Add Rapid Api Keys
 
 ```bash
-X_RapidAPI_Key="xxxxxxxx"
-X_RapidAPI_Host="xxxxxxx"
+X_RapidAPI_Key=xxxxxxxx
+X_RapidAPI_Host=xxxxxxx
 ```
 
 -   Add mailtrap credentials to catch emails

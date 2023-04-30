@@ -96,12 +96,12 @@
                 data: {
                     datasets: [{
                             label: 'Open',
-                            backgroundColor: 'rgb(255, 99, 132)',
+                            backgroundColor: 'rgb(66, 185, 131)',
                             data: openPricesData
                         },
                         {
                             label: 'Close',
-                            backgroundColor: 'rgb(255, 193, 7)',
+                            backgroundColor: 'rgb(255, 99, 132)',
                             data: closePricesData
                         }
                     ]
