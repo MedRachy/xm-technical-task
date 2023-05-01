@@ -70,6 +70,17 @@ class CompanyController extends Controller
         ]);
     }
 
+    private function getCompanyName($symbol)
+    {
+        // get data from the cache if its exists, else return new api response  
+        $companiesData = Cache::remember('companiesData', Carbon::now()->addDays(1), function () {
+            return $this->getCompaniesApiData();
+        });
+        $company = $companiesData->firstWhere('Symbol', $symbol);
+
+        return (isset($company) ? $company['Company Name'] : '');
+    }
+
     private function getCompaniesApiData()
     {
         try {
@@ -97,17 +108,6 @@ class CompanyController extends Controller
                 return back()->withErrors(['message' => 'An error occurred while calling the API endpoint.']);
             }
         }
-    }
-
-    private function getCompanyName($symbol)
-    {
-        // get data from the cache if its exists, else return new api response  
-        $companiesData = Cache::remember('companiesData', Carbon::now()->addDays(1), function () {
-            return $this->getCompaniesApiData();
-        });
-        $company = $companiesData->firstWhere('Symbol', $symbol);
-
-        return (isset($company) ? $company['Company Name'] : '');
     }
 
     private function getApiData($companySymbol)

@@ -116,7 +116,7 @@
             };
 
             // init charts
-            const openCloseChart = new Chart(document.getElementById('openCloseChart'), configbar);
+            const openCloseChart = new Chart($('#openCloseChart'), configbar);
 
         })
     </script>

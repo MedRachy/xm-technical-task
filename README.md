@@ -2,7 +2,7 @@
 
 ## To do befor testing :
 
-update env file :
+Update env file :
 
 -   Add Rapid Api Keys
 

@@ -15,10 +15,10 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center mt-5">XM technical task </h1>
+                <h1 class="text-center mb-5">XM technical task </h1>
                 @if ($errors->any())
                     <div class="alert alert-danger alert-dismissible fade show">
                         <ul>
@@ -31,7 +31,6 @@
                 @endif
             </div>
             <div class="col-12">
-                <h3 class="my-3">Form :</h3>
                 <form method="POST" action="{{ route('companies.handelSubmittedForm') }}">
                     @csrf
                     <div class="mb-3">

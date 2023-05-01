@@ -178,7 +178,8 @@ class CompaniesTest extends TestCase
 
         $response->assertOk();
 
-        // assert that quotes are between startDate and endDate  
+        // because quotes are sorted by date we can assert that quotes are between startDate and endDate  
+        // by comparing quotes first index and last index with start date and end date : 
         \PHPUnit\Framework\TestCase::assertGreaterThanOrEqual($ValidData['startDate'], $quotes[$count - 1]['date']);
         \PHPUnit\Framework\TestCase::assertLessThanOrEqual($ValidData['endDate'], $quotes[0]['date']);
     }
