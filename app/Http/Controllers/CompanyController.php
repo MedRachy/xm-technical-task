@@ -52,11 +52,10 @@ class CompanyController extends Controller
             return (isset($unfiltredApiData) ?  $this->filterByDateRange($unfiltredApiData, $startDate, $endDate) : null);
         });
         /* --------------
-         * Send Email 
-         * NOTE : To avoid response delay : SendEmail class should implement "ShouldQueue"
-         * so it can be processed async when running queue:work (after config QUEUE_CONNECTION with database driver for example and running migration)  
-         * but it was not asked in the exercie,
-         * and im not sur how the exercie will be tested     
+         * NOTE : using Queue was not asked in the exercise, 
+         * to test the applciation without queues configuration, 
+         * please remove " implements ShouldQueue" from SendEmail class 
+         * and sending emails will be processed synchronously  
          * --------------
         */
         $companyName = $this->getCompanyName($companySymbol);
